@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:home_quest_clone/model/log.dart';
+import 'package:home_quest_clone/model/log_data.dart';
 
 /*
 Log segment. The widget segment that makes up <log_page>
  */
 class LogSegment extends StatelessWidget {
   final IconData icon;
-  final Log log;
+  final LogData logData;
 
   LogSegment({
-    @required this.icon,
-    @required this.log,
+    this.icon = Icons.add,
+    @required this.logData,
   });
 
   @override
@@ -29,7 +29,7 @@ class LogSegment extends StatelessWidget {
               ),
               SizedBox(width: 5),
               Text(
-                log.title,
+                logData.title,
                 style: TextStyle(
                   fontSize: 24,
                   color: Colors.white,
@@ -43,7 +43,7 @@ class LogSegment extends StatelessWidget {
             height: 15,
           ),
           Text(
-            log.description,
+            logData.description,
             textAlign: TextAlign.left,
             style: TextStyle(
               color: Colors.white,
